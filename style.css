@@ -1,0 +1,158 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans&family=Poppins:wght@400;600&display=swap");
+
+:root {
+  --violet: hsl(257, 40%, 49%);
+  --soft-magenta: hsl(300, 69%, 71%);
+  --font-family-body: "Open Sans", sans-serif;
+  --font-family-heading: "Poppins", sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-image: url(./images/bg-mobile.svg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-color: var(--violet);
+  font-size: 16px;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 50px auto;
+  width: 400px;
+}
+
+main {
+  max-width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  /* margin: 50px auto; */
+}
+
+header {
+  align-self: flex-start;
+  margin-bottom: 48px;
+}
+
+header img {
+  transform: scale(0.8);
+}
+
+.content {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(2, minmax(200px, 1fr));
+  max-width: 375px;
+  row-gap: 40px;
+}
+
+figure {
+  margin: 0;
+}
+
+figure img {
+  width: 100%;
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #fff;
+  text-align: center;
+}
+
+.info-title {
+  font-family: var(--font-family-heading);
+  font-size: 32px;
+  letter-spacing: -1px;
+  line-height: 1.1;
+  margin-bottom: 32px;
+}
+
+.info-detail {
+  font-family: var(--font-family-body);
+  font-size: 18px;
+  font-weight: 400;
+  letter-spacing: 1px;
+  line-height: 1.7;
+  opacity: 0.7;
+  margin-bottom: 24px;
+}
+
+.btn {
+  color: var(--violet);
+  font-size: 20px;
+  letter-spacing: 1px;
+  padding: 16px 32px;
+  width: 70%;
+  border: none;
+  border-radius: 32px;
+  margin-bottom: 24px;
+}
+
+.btn:hover {
+  color: #fff;
+  background-color: var(--soft-magenta);
+  transition: all ease 0.3s;
+}
+
+.social-media {
+  list-style-type: none;
+  display: flex;
+  gap: 20px;
+}
+
+li .media-icon {
+  display: inline-block;
+  width: 32px;
+  height: 32px;
+  border: 1px solid white;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 32px;
+  text-decoration: none;
+  color: #fff;
+}
+
+@media screen and (min-width: 768px) {
+  body {
+    background-image: url(./images/bg-desktop.svg);
+    background-size: contain;
+  }
+
+  main {
+    margin: 100px auto;
+    max-width: 100%;
+    flex-direction: row;
+  }
+
+  .content {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    min-width: 960px;
+    gap: 20px;
+    position: relative;
+  }
+
+  header {
+    position: absolute;
+    top: 50px;
+    left: 0;
+  }
+
+  .btn {
+    width: auto;
+  }
+
+  .social-media {
+    margin-top: 48px;
+  }
+}
